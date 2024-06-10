@@ -180,7 +180,7 @@ export const addUser=async(req,res)=>{
  export const updateUser=async(req,res)=>{
     try {
         const {nombre,email,contra,rol,torneos_ganados,puntos,podios,carreras_ganadas} = req.body;
-        const contraHash = null;
+        let contraHash = undefined;
         if (contra!=undefined) {
              contraHash = await encrypt(contra)
         }
